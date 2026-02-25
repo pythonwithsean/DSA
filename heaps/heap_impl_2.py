@@ -1,7 +1,3 @@
-
-
-
-
 # Min heap Implementation
 class Heap:
 
@@ -11,8 +7,6 @@ class Heap:
   # Left Child 2 * i + 1
   # Return the index of the left child
   def left_child(self,index):
-    if index < 0 or index >= len(self._heap):
-      raise Exception("Illegal Exception")
     return 2 * index + 1
 
   def inBounds(self,index):
@@ -21,8 +15,6 @@ class Heap:
   # Right Child 2 * i + 2
   # Return the index of the right child
   def right_child(self,index):
-    if index < 0 or index >= len(self._heap):
-      raise Exception("Illegal Exception")
     return 2 * index + 2
 
   # Parent Child (i - 1) // 2
@@ -44,16 +36,19 @@ class Heap:
       index = self.parent(index)
 
   def peek(self):
+    if self.is_empty(): return None
     return self._heap[0]
   def is_empty(self):
     return len(self._heap) == 0
 
   def poll(self):
-    if(self.is_empty()): None
+    if self.is_empty():
+      return None
     smallest = self._heap[0]
     last = self._heap.pop()
     # if it is empty after pop then there is only 1 node just return the tmp
-    if(self.is_empty()): return smallest
+    if self.is_empty():
+      return smallest
     # there is more than 1 node so heapify down
     self._heap[0] = last
     self.heapify_down()
@@ -73,7 +68,6 @@ class Heap:
           index = self.right_child(index)
        else:
          break
-
 
 heap = Heap()
 heap.insert(50)

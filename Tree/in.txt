@@ -1,0 +1,25 @@
+             * (root)                  0
+            / \
+          'a'   *                      1
+              / \
+             'b' 'c'                   2
+
+           
+
+class Node:
+    def __init__(self,val):
+        self.val = val
+        self.children = []
+
+[]
+
+a-> 0
+b -> 10
+
+0 -> a
+10 -> b
+
+
+01010010 -> abbb
+
+#bfs

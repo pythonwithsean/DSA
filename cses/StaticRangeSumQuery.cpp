@@ -3,20 +3,20 @@
 #define Log(x) for(auto e : x){ std::cout << e << " ";} std::cout << "\n";
 
 int main(){
-    long long n, q;
+    long n, q;
     std::cin >> n;
     std::cin >> q;
-    std::vector<long long> v;
-    std::vector<std::pair<long long, long long >> pairs;
+    std::vector<long> v;
+    std::vector<std::pair<long, long>> pairs;
     std::vector<long> prefix(n + 1);
     for(long i = 0; i < n; i++ ){
-        long long val;
+        long val;
         std::cin >> val;
         v.push_back(val);
     }
 
     for(long i = 0; i < q; i++){
-        long long first, second;
+        long first, second;
         std::cin >> first;
         std::cin >> second;
         pairs.push_back(std::pair<int,int>(first, second));

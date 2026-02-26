@@ -80,3 +80,36 @@ def test_peek_does_not_remove_element():
     assert h.peek() == 1  # Ensure peek doesn't remove the element
     assert h.poll() == 1
     assert h.poll() == 3
+
+
+def test_heapify_builds_valid_heap_and_preserves_input():
+    # original array should not be modified
+    arr = [500, 20, 2, 4, 3, 0]
+    h = Heap()
+    h.heapify(arr)
+    # the heap should return elements in sorted order
+    out = [h.poll() for _ in range(len(arr))]
+    assert out == sorted(arr)
+    # ensure the array passed in was not altered by heapify
+    assert arr == [500, 20, 2, 4, 3, 0]
+
+
+def test_heapify_on_empty_and_single_element():
+    h = Heap()
+    h.heapify([])
+    assert h.is_empty()
+    assert h.peek() is None
+    assert h.poll() is None
+
+    h.heapify([42])
+    assert not h.is_empty()
+    assert h.peek() == 42
+    assert h.poll() == 42
+    assert h.is_empty()
+
+
+def test_heapify_with_already_heapified_input():
+    arr = [1, 3, 5, 7, 9]
+    h = Heap()
+    h.heapify(arr)
+    assert [h.poll() for _ in range(len(arr))] == arr

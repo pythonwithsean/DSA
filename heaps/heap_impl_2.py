@@ -69,7 +69,13 @@ class Heap:
        else:
          break
 
+  def heapify(self,arr):
+    self._heap = arr[:]
+    for i in range(len(self._heap) // 2 - 1 , -1, -1):
+      self.heapify_down(i)
+
+arr = [500,20,2,4,3,0]
 heap = Heap()
-heap.insert(50)
-heap.insert(2)
-print(heap.peek())
+heap.heapify(arr)
+print(heap.poll())
+print(heap.poll())

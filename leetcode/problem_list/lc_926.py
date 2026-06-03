@@ -53,7 +53,7 @@ whether we have already started placing 1s. Once the 1-section begins,
 we can never place another 0 without performing a flip.
 
 Time:  O(n)
-Space: O(n)
+Space: O(2*n)
 """
 
 class Solution:

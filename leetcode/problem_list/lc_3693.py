@@ -1,4 +1,5 @@
 import math
+from typing import List
 class Solution:
     def climbStairs(self, n: int, costs: List[int]) -> int:
         """

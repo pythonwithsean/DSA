@@ -13,14 +13,10 @@ class Solution:
 
             to go from i to j -> cost[j] + (j - i)^2
 
-
             n = 4
             [1,2,3,4]
 
-
             n
-
-
 
         """
 

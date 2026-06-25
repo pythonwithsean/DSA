@@ -9,9 +9,8 @@ func toInt(s string) (int, error) {
 		if c < 0x30 || c > 0x39 {
 			return -1, fmt.Errorf("can not turn \"%c\" to int", c)
 		}
-		c -= byte('0')
 		res *= 10
-		res += int(c)
+		res += int((c - byte('0')))
 	}
 	return res, nil
 }
